@@ -1,0 +1,29 @@
+<ion-content padding>
+  <ion-grid class="full-hieght">
+    <ion-row class="full-hieght">
+      <ion-col align-self-center>
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <ion-item no-padding> 
+              <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email" required type="email"></ion-input>
+          </ion-item>
+
+          <ion-item no-padding>
+              <ion-label  position="floating">Password</ion-label>
+            <ion-input formControlName="password" required type="password"></ion-input>
+          </ion-item>
+          <a class="text-info" class="reset" href="/auth/resetpassword">Forgot password?</a>
+          
+          <br>
+          <br>
+
+          <ion-button class="log" [disabled]="form.invalid || loading" (click)="login()" expand="block">Login</ion-button>
+
+
+        </form>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
